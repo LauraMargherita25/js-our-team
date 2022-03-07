@@ -33,7 +33,7 @@ Prendendo come riferimento la card di esempio presente nell'html, stampiamo dina
 /* ---SVOLGIMENTO--- */
 
 // controllo se riesco ad appendere solo una card
-/* 
+ 
 const eleTeamContainer = document.querySelector('team-container');
 const eleTeamCard = document.createElement("div");
 eleTeamCard.classList.add('team-card');
@@ -49,10 +49,9 @@ eleTeamCard.innerHTML = `<div class="card-image">
 </div>`;
 eleTeamContainer.append(eleTeamCard);
 
-*/
 
 const eleCardImg = document.querySelector('card-image');
-eleCardImg.src = '../img/'
+eleCardImg.src = '../img/wayne-barnett-founder-ceo.jpg'
 const eleCardText = document.querySelector('card-text');
 eleCardText.innerHTML = 'Wayne Barnett';
 
