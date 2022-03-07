@@ -33,13 +33,34 @@ Prendendo come riferimento la card di esempio presente nell'html, stampiamo dina
 /* ---SVOLGIMENTO--- */
 
 // controllo se riesco ad appendere solo una card
+/* 
 const eleTeamContainer = document.querySelector('team-container');
 const eleTeamCard = document.createElement("div");
 eleTeamCard.classList.add('team-card');
-eleTeamCard.innerHTML = //papina tra backtick;
+eleTeamCard.innerHTML = `<div class="card-image">
+<img
+  src="img/wayne-barnett-founder-ceo.jpg"
+  alt="Wayne Barnett"
+/>
+</div>
+<div class="card-text">
+<h3>Wayne Barnett</h3>
+<p>Founder & CEO</p>
+</div>`;
 eleTeamContainer.append(eleTeamCard);
 
+*/
 
 const eleCardImg = document.querySelector('card-image');
+eleCardImg.src = '../img/'
 const eleCardText = document.querySelector('card-text');
+eleCardText.innerHTML = 'Wayne Barnett';
+
+const arrTeamMembers = [
+    {
+    name: eleCardText,
+    role: 'Founder & CEO',
+    img: eleCardImg
+    }
+];
 
