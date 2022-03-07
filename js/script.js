@@ -37,29 +37,62 @@ Prendendo come riferimento la card di esempio presente nell'html, stampiamo dina
 const eleTeamContainer = document.querySelector('.team-container');
 const eleTeamCard = document.createElement("div");
 eleTeamCard.classList.add('team-card');
-eleTeamCard.innerHTML = `<div class="card-image">
-              <img
-                src="img/wayne-barnett-founder-ceo.jpg"
-                alt="Wayne Barnett"
-              />
-            </div>
-            <div class="card-text">
-              <h3>Wayne Barnett</h3>
-              <p>Founder & CEO</p>
-            </div>`;
 eleTeamContainer.append(eleTeamCard);
 
 
-// const eleCardImg = document.querySelector('.card-image');
-// eleCardImg.src = '../img/wayne-barnett-founder-ceo.jpg'
-const eleCardText = document.querySelector('.card-text');
-eleCardText.innerHTML = 'Wayne Barnett';
+const eleCardImg = document.createElement("div");
+eleCardImg.classList.add('card-image');
+eleTeamCard.append(eleCardImg);
 
-const arrTeamMembers = [
+const eleImg = document.createElement("img");
+eleImg.src = "../img/wayne-barnett-founder-ceo.jpg";
+eleCardImg.append(eleImg);
+
+const eleCardText = document.createElement("div");
+eleCardText.classList.add('card-text');
+eleCardText.innerHTML = `<div class="card-text">
+<h3>Wayne Barnett</h3>
+<p>Founder & CEO</p>
+</div>`;
+eleTeamCard.append(eleCardText);
+
+
+/* const arrTeamMembers = [
     {
-    name: eleCardText,
+    name: 'Wayne Barnett',
     role: 'Founder & CEO',
-    img: eleCardImg
+    img: img.src'../img/wayne-barnett-founder-ceo.jpg'
     }
-];
+
+    {
+    name: 'Wayne Barnett',
+    role: 'Founder & CEO',
+    img: img.src'../img/wayne-barnett-founder-ceo.jpg'
+    }
+
+    {
+    name: 'Wayne Barnett',
+    role: 'Founder & CEO',
+    img: img.src'../img/wayne-barnett-founder-ceo.jpg'
+    }
+
+    {
+    name: 'Wayne Barnett',
+    role: 'Founder & CEO',
+    img: img.src'../img/wayne-barnett-founder-ceo.jpg'
+    }
+
+    {
+    name: 'Wayne Barnett',
+    role: 'Founder & CEO',
+    img: img.src'../img/wayne-barnett-founder-ceo.jpg'
+    }
+
+    {
+    name: 'Wayne Barnett',
+    role: 'Founder & CEO',
+    img: img.src'../img/wayne-barnett-founder-ceo.jpg'
+    }
+
+]; */
 
