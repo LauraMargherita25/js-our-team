@@ -84,7 +84,7 @@ btnAddTeamMember.addEventListener('click', getNewMember);
 
 function getNewMember() {
 
-    objNewMember = {
+    const objNewMember = {
         name: eleName.value,
         role: eleRole.value,
         img: eleProfilePhoto.value
@@ -93,7 +93,7 @@ function getNewMember() {
     arrTeamMembers.push(objNewMember);
 
     // creo un ciclo per stampare una card per ogni nuovo elemetno del team
-    for (let i = 0; i < arrTeamMembers.length; i++) {
+    
 
         // creo la card
         const eleTeamContainer = document.querySelector('.team-container');
@@ -108,7 +108,7 @@ function getNewMember() {
         eleTeamCard.append(eleCardImg);
 
         const eleImg = document.createElement("img");
-        eleImg.src = arrTeamMembers[i].img;
+        eleImg.src =  objNewMember.img;
         eleCardImg.append(eleImg);
         
 
@@ -118,13 +118,13 @@ function getNewMember() {
         eleTeamCard.append(eleCardText);
 
         const userName = document.createElement("h3");
-        userName.innerHTML = arrTeamMembers[i].name;
+        userName.innerHTML =  objNewMember.name;
         eleCardText.append(userName);
 
         const userRole = document.createElement("p");
-        userRole.innerHTML = arrTeamMembers[i].role;
+        userRole.innerHTML =  objNewMember.role;
         eleCardText.append(userRole);
-    }
+    
 } 
 
 // creo un ciclo per stampare una card per ogni nuovo elemetno del team
