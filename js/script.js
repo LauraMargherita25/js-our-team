@@ -37,8 +37,6 @@ const eleRole = document.getElementById("role");
 const eleProfilePhoto = document.getElementById("image");
 const btnAddTeamMember = document.getElementById("addMemberButton");
 
-
-
 // creo un array di obj, uno per ogni elemento del team
 const arrTeamMembers = [
     {
@@ -57,43 +55,77 @@ const arrTeamMembers = [
         name: 'Walter Gordon',
     role: 'Office Manager',
     img: '../img/walter-gordon-office-manager.jpg'
-},
+    },
 
-{
-    name: 'Angela Lopez',
-    role: 'Social Media Manager',
-    img: '../img/angela-lopez-social-media-manager.jpg'
-},
+    {
+        name: 'Angela Lopez',
+        role: 'Social Media Manager',
+        img: '../img/angela-lopez-social-media-manager.jpg'
+    },
 
-{
-    name: 'Scott Estrada',
-    role: 'Developer',
-    img: '../img/scott-estrada-developer.jpg'
-},
+    {
+        name: 'Scott Estrada',
+        role: 'Developer',
+        img: '../img/scott-estrada-developer.jpg'
+    },
 
-{
-    name: 'Barbara Ramos',
-    role: 'Graphic Designer',
-    img: '../img/barbara-ramos-graphic-designer.jpg'
-},
+    {
+        name: 'Barbara Ramos',
+        role: 'Graphic Designer',
+        img: '../img/barbara-ramos-graphic-designer.jpg'
+    },
 
 ];
+
+
 
 btnAddTeamMember.addEventListener('click', getNewMember);
 
 
 function getNewMember() {
 
-    const objNewMember = {
+    objNewMember = {
         name: eleName.value,
         role: eleRole.value,
         img: eleProfilePhoto.value
     }
 
     arrTeamMembers.push(objNewMember);
-} 
 
-console.log(arrTeamMembers)
+    // creo un ciclo per stampare una card per ogni nuovo elemetno del team
+    for (let i = 0; i < arrTeamMembers.length; i++) {
+
+        // creo la card
+        const eleTeamContainer = document.querySelector('.team-container');
+        const eleTeamCard = document.createElement("div");
+        eleTeamCard.classList.add('team-card');
+        eleTeamContainer.append(eleTeamCard);
+
+
+        // creo la sezione per l'img
+        const eleCardImg = document.createElement("div");
+        eleCardImg.classList.add('card-image');
+        eleTeamCard.append(eleCardImg);
+
+        const eleImg = document.createElement("img");
+        eleImg.src = arrTeamMembers[i].img;
+        eleCardImg.append(eleImg);
+        
+
+        // creo la sezioe per il testo
+        const eleCardText = document.createElement("div");
+        eleCardText.classList.add('card-text');
+        eleTeamCard.append(eleCardText);
+
+        const userName = document.createElement("h3");
+        userName.innerHTML = arrTeamMembers[i].name;
+        eleCardText.append(userName);
+
+        const userRole = document.createElement("p");
+        userRole.innerHTML = arrTeamMembers[i].role;
+        eleCardText.append(userRole);
+    }
+} 
 
 // creo un ciclo per stampare una card per ogni nuovo elemetno del team
 for (let i = 0; i < arrTeamMembers.length; i++) {
@@ -128,6 +160,8 @@ for (let i = 0; i < arrTeamMembers.length; i++) {
     userRole.innerHTML = arrTeamMembers[i].role;
     eleCardText.append(userRole);
 }
+console.log(arrTeamMembers)
+
 
 
 
